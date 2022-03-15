@@ -16,7 +16,8 @@ ln -s ~/dotfs/i3/
 
 
 #setting up neovim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 sudo pacman -Syu
 nvim -c 'PackerInstall'
 cd ~/.config/coc/extensions

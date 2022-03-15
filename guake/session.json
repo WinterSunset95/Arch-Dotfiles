@@ -1,6 +1,6 @@
 {
     "schema_version": 2,
-    "timestamp": 1647144333,
+    "timestamp": 1647365511,
     "workspace": {
         "0": [
             [
@@ -8,7 +8,7 @@
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter",
+                            "directory": "/home/winter/dotfs",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -16,14 +16,14 @@
                             }
                         }
                     ],
-                    "label": "winter@archusb:~",
+                    "label": "winter@winterarch:~",
                     "custom_label_set": false
                 },
                 {
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter",
+                            "directory": "/home/winter/dotfs",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -31,14 +31,14 @@
                             }
                         }
                     ],
-                    "label": "winter@archusb:~",
+                    "label": "winter@winterarch:~/dotfs",
                     "custom_label_set": false
                 },
                 {
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter/dotfiles",
+                            "directory": "/home/winter/dotfs",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -46,7 +46,7 @@
                             }
                         }
                     ],
-                    "label": "winter@archusb:~",
+                    "label": "winter@winterarch:~/dotfs",
                     "custom_label_set": false
                 }
             ]

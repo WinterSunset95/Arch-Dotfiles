@@ -14,3 +14,4 @@ falkon
 dmenu
 xfce4-panel
 qutebrowser
+iwd
