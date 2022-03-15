@@ -1,0 +1,16 @@
+xorg
+terminator
+git
+xorg-xinit
+guake
+thunar
+pulseaudio
+i3
+nodejs
+python-pip
+npm
+feh
+falkon
+dmenu
+xfce4-panel
+qutebrowser

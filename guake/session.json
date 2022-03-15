@@ -1,0 +1,55 @@
+{
+    "schema_version": 2,
+    "timestamp": 1647144333,
+    "workspace": {
+        "0": [
+            [
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/winter",
+                            "custom_colors": {
+                                "fg_color": null,
+                                "bg_color": null,
+                                "palette": null
+                            }
+                        }
+                    ],
+                    "label": "winter@archusb:~",
+                    "custom_label_set": false
+                },
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/winter",
+                            "custom_colors": {
+                                "fg_color": null,
+                                "bg_color": null,
+                                "palette": null
+                            }
+                        }
+                    ],
+                    "label": "winter@archusb:~",
+                    "custom_label_set": false
+                },
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/winter/dotfiles",
+                            "custom_colors": {
+                                "fg_color": null,
+                                "bg_color": null,
+                                "palette": null
+                            }
+                        }
+                    ],
+                    "label": "winter@archusb:~",
+                    "custom_label_set": false
+                }
+            ]
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+mo|module|around
+loa|load|around
+plu|plugin|around
+dis|disable|around
+|843842.jpg|file
+D|Downloads|file
+s|startup|around
+|extensions|file
+co|coc|file
+con|config|around
+xini|xinitrc|around
+|dotfiles|file
+do|dotfiles|file
+xcomp|xcompmgr|sh
