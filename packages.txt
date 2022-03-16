@@ -15,3 +15,8 @@ dmenu
 xfce4-panel
 qutebrowser
 iwd
+xcompmgr
+mtpfs
+gvfs-mtp
+p7zip
+grub-customizer

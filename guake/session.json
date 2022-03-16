@@ -1,6 +1,6 @@
 {
     "schema_version": 2,
-    "timestamp": 1647365511,
+    "timestamp": 1647419889,
     "workspace": {
         "0": [
             [
@@ -8,7 +8,7 @@
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter/dotfs",
+                            "directory": "/home/winter",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -16,7 +16,7 @@
                             }
                         }
                     ],
-                    "label": "winter@winterarch:~",
+                    "label": "winter@winterarch:~/dotfs",
                     "custom_label_set": false
                 },
                 {

@@ -1,3 +1,7 @@
+|wallpapers|file
+d|dotfs|file
+|bin|file
+bind|bindsym|around
 mo|module|around
 loa|load|around
 plu|plugin|around
