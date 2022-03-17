@@ -1,6 +1,6 @@
 {
     "schema_version": 2,
-    "timestamp": 1647144333,
+    "timestamp": 1647544933,
     "workspace": {
         "0": [
             [
@@ -16,7 +16,7 @@
                             }
                         }
                     ],
-                    "label": "winter@archusb:~",
+                    "label": "winter@winterarch:~",
                     "custom_label_set": false
                 },
                 {
@@ -31,14 +31,14 @@
                             }
                         }
                     ],
-                    "label": "winter@archusb:~",
+                    "label": "winter@winterarch:~",
                     "custom_label_set": false
                 },
                 {
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter/dotfiles",
+                            "directory": "/home/winter",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -46,7 +46,22 @@
                             }
                         }
                     ],
-                    "label": "winter@archusb:~",
+                    "label": "winter@winterarch:~",
+                    "custom_label_set": false
+                },
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/winter/dotfs",
+                            "custom_colors": {
+                                "fg_color": null,
+                                "bg_color": null,
+                                "palette": null
+                            }
+                        }
+                    ],
+                    "label": "winter@winterarch:~",
                     "custom_label_set": false
                 }
             ]
