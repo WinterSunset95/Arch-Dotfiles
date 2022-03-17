@@ -31,3 +31,6 @@ sudo pacman -S - < packages.txt
 #git clone https://aur.archlinux.org/yay.git
 #cd yay
 #makepkg -si
+
+#backgrounds
+feh --bg-scale ~/dotfs/wallpapers/wp4504931-grunge-aesthetic-wallpapers.png

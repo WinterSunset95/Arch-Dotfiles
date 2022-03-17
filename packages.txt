@@ -5,6 +5,7 @@ xorg-xinit
 guake
 thunar
 pulseaudio
+pavucontrol
 i3
 nodejs
 python-pip
@@ -14,3 +15,13 @@ falkon
 dmenu
 xfce4-panel
 qutebrowser
+iwd
+xcompmgr
+mtpfs
+gvfs-mtp
+p7zip
+grub-customizer
+xfce4-pulseaudio-plugin
+xfce4-clipman-plugin
+xfce4-notes-plugin
+php

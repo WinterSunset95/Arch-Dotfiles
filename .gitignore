@@ -12,3 +12,5 @@
 pkg/
 src/
 guake/session.json
+coc/suggest.txt
+guake/session.json

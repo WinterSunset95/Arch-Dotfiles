@@ -1,6 +1,6 @@
 {
     "schema_version": 2,
-    "timestamp": 1647544933,
+    "timestamp": 1647549754,
     "workspace": {
         "0": [
             [
@@ -8,7 +8,7 @@
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter",
+                            "directory": "/home/winter/WinterSunset95.github.io",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -16,14 +16,14 @@
                             }
                         }
                     ],
-                    "label": "winter@winterarch:~",
+                    "label": "winter@winterarch:~/WinterSunset95.github.io",
                     "custom_label_set": false
                 },
                 {
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter",
+                            "directory": "/home/winter/WinterSunset95.github.io/Duotlai/hmar",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -31,14 +31,14 @@
                             }
                         }
                     ],
-                    "label": "winter@winterarch:~",
+                    "label": "winter@winterarch:~/WinterSunset95.github.io/Duotlai/hmar",
                     "custom_label_set": false
                 },
                 {
                     "panes": [
                         {
                             "type": "term",
-                            "directory": "/home/winter",
+                            "directory": "/home/winter/dotfs",
                             "custom_colors": {
                                 "fg_color": null,
                                 "bg_color": null,
@@ -61,7 +61,7 @@
                             }
                         }
                     ],
-                    "label": "winter@winterarch:~",
+                    "label": "winter@winterarch:~/dotfs",
                     "custom_label_set": false
                 }
             ]
