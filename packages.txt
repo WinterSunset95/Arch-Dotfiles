@@ -1,17 +1,14 @@
+xterm
 xorg
-terminator
-git
 xorg-xinit
 guake
 thunar
 pulseaudio
 pavucontrol
-i3
 nodejs
 python-pip
 npm
 feh
-falkon
 dmenu
 xfce4-panel
 qutebrowser
@@ -25,3 +22,7 @@ xfce4-pulseaudio-plugin
 xfce4-clipman-plugin
 xfce4-notes-plugin
 php
+openbox
+menumaker
+wget
+github-cli
