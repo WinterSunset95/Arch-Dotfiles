@@ -24,7 +24,7 @@ printf "\nSetting up xinit"
 # OpenBox
 printf "\nSetting up OpenBox"
 mmaker -vf OpenBox3
-cd /etc/xdg/
+cd /etc/xdg/openbox
 {
 	rm -rf /etc/xdg/openbox/autostart
 	printf "\nRemoved original autostart file"
@@ -60,6 +60,7 @@ cd /etc/xdg/
 	printf "\nInstalled vim-plug"
     printf "\nInstalling plugins"
     nvim -c "PlugInstall"
+	nvim -c "CocInstall coc-pairs coc-emmet"
 } || {
 	printf "\nvim-plug installation failed"
 }
