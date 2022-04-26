@@ -26,3 +26,4 @@ openbox
 menumaker
 wget
 github-cli
+neovim
