@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Chess
+GenericName=Chess Game
+Comment=Play the classic two-player board game of chess
+Keywords=game;strategy;
+Version=1.0
+Exec=gnome-chess %U
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Game;BoardGame;
+StartupNotify=true
+Icon=org.gnome.Chess
+MimeType=application/x-chess-pgn;
+DBusActivatable=true
+X-Purism-FormFactor=Workstation;Mobile;
+X-XFCE-Source=file:///usr/share/applications/org.gnome.Chess.desktop

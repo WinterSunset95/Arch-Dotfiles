@@ -17,7 +17,7 @@ printf "${boldred}\n\nUpdating package list first${end}"
 sudo pacman -Sy
 printf "${boldcyan}\nDone!${end}"
 printf "${boldred}\n\nInstalling packages from package.txt${end}"
-#sudo pacman -S - < packages.txt
+sudo pacman -S - < packages.txt
 printf "${boldcyan}\nDone!${end}"
 
 # Setting up the config
@@ -105,10 +105,11 @@ printf "${boldcyan}\nDone${end}"
 
 # Setting up pulseaudio 
 
-if [ $uid == 0]; then
+if [ $uid == 0]
+then
 	exit
 else
-	printf "${boldred}\nSetting up Pulseaudio${end}"
+	printf "${boldred}\nSetting up Pulseaudio\n${end}"
 	systemctl --user enable pulseaudio
 	printf "${boldcyan}\nReboot after installation${end}"
 
