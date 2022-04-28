@@ -13,7 +13,9 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest,list
+set cc=80
+set ttyfast
 set clipboard=unnamedplus
 set splitbelow
 filetype plugin on
@@ -33,6 +35,8 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 
+inoremap ii <esc>
+vnoremap ii <esc>
 tnoremap <esc> <c-\><c-n>
 
 au VimEnter * :Vexplore
