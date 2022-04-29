@@ -9,24 +9,24 @@ end="\e[0m"
 
 dir=$(pwd)
 uid=$(id -u)
-user=$(whoami)
 
 # Installing the required packages
 
 printf "${boldred}\n\nUpdating package list first${end}"
-sudo pacman -Sy
+#sudo pacman -Sy
 printf "${boldcyan}\nDone!${end}"
 printf "${boldred}\n\nInstalling packages from package.txt${end}"
-sudo pacman -S - < packages.txt
+#sudo pacman -S - < packages.txt
 printf "${boldcyan}\nDone!${end}"
 
 # Init function
 call () {
+	cd $dir/scripts
 	if [ uid == 0 ]
 	then
-		sudo bash ./scripts/$1.sh
+		sudo bash $1.sh
 	else
-		bash ./scripts/$1.sh
+		bash $1.sh
 	fi
 }
 
