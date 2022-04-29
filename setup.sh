@@ -20,100 +20,32 @@ printf "${boldred}\n\nInstalling packages from package.txt${end}"
 sudo pacman -S - < packages.txt
 printf "${boldcyan}\nDone!${end}"
 
+# Init function
+call () {
+	if [ uid == 0 ]
+	then
+		sudo bash ./scripts/$1.sh
+	else
+		bash ./scripts/$1.sh
+	fi
+}
+
 # Setting up the config
 # Startx
-if [ uid == 0 ]
-then
-	cd /etc/X11/xinit/
-	fname="xinitrc"
-else
-	cd ~/
-	fname=".xinitrc"
-fi
-
-printf "${boldred}\n\nSetting up xinit for $user ${end}"
-{
-	rm -rf .xinitrc
-	ln -s $dir/xinitrc $fname
-} || {
-	ln -s $dir/xinitrc $fname
-}
-printf "${boldcyan}\nDone!${end}"
+call "xinit"
 
 # OpenBox
-printf "${boldred}\n\nSetting up OpenBox for $user ${end}"
-mmaker -vf OpenBox3
-if [ uid == 0 ]
-then
-	cd /etc/xdg/openbox/
-else
-	cd ~/.config/openbox
-fi
-
-{
-	rm -rf autostart
-	ln -s $dir/autostart
-} || {
-	ln -s $dir/autostart
-}
-printf "${boldcyan}\nDone!${end}"
+call "openbox"
 
 # Setting up neovim
-printf "${boldred}\n\nSetting up neovim for $user ${end}"
-if [ uid == 0 ]
-then
-	cd /etc/xdg/
-else
-	cd ~/.config/
-fi
-{
-    rm -rf nvim
-	ln -s $dir/nvim
-} || {
-	ln -s $dir/nvim
-}
-printf "${boldcyan}\nDone!${end}"
-
-{
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	printf "\nInstalled vim-plug"
-    printf "\nInstalling plugins"
-    nvim -c "PlugInstall"
-	nvim -c "CocInstall coc-pairs coc-emmet coc-python coc-sh coc-tsserver"
-} || {
-	printf "\nvim-plug installation failed"
-}
-pip install pynvim
-npm install neovim
+call "nvim"
 
 # Setting up xfce4
-printf "${boldred}\n\nSetting up xfce panel for $user ${end}"
-if [ uid == 0 ]
-then
-	cd /etc/xdg/
-else
-	cd ~/.config
-fi
-{
-	rm -rf xfce4
-	ln -s $dir/xfce4
-} || {
-	ln -s $dir/xfce4
-}
-printf "${boldcyan}\nDone${end}"
+call "xfce"
 
 # Setting up pulseaudio 
+call "pulse"
 
-if [ $uid == 0]
-then
-	exit
-else
-	printf "${boldred}\nSetting up Pulseaudio\n${end}"
-	systemctl --user enable pulseaudio
-	printf "${boldcyan}\nReboot after installation${end}"
-
-fi
 # Setting up yay
 	#cd
 	#git clone https://aur.archlinux.org/yay.git

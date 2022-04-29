@@ -25,18 +25,30 @@ call plug#begin()
 Plug 'dracula/vim'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'BurntSushi/ripgrep'
+Plug 'sharkdp/fd'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-let g:mapleader = ','
 let g:user_emmet_leader_key = ','
+let g:mapleader = ','
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 
 inoremap ii <esc>
-vnoremap ii <esc>
+inoremap <C-w> <esc><C-w>w
+inoremap <S-T>T <esc>:Telescope find_files<CR>
+inoremap <C-N> <esc>:bn<CR>
+inoremap <C-P> <esc>:bp<CR>
+nnoremap <C-N> :bn<CR>
+nnoremap <C-P> :bp<CR>
+nnoremap <S-T>T :Telescope find_files<CR>
+nnoremap <C-w> <C-w>w
 tnoremap <esc> <c-\><c-n>
 
 au VimEnter * :Vexplore
