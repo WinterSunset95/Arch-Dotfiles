@@ -30,15 +30,14 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'BurntSushi/ripgrep'
 Plug 'sharkdp/fd'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 Plug 'dracula/vim', { 'as': 'dracula' }
+colorscheme dracula
 
 let g:user_emmet_leader_key = ','
 let g:mapleader = ','
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
 
 inoremap ii <esc>
 inoremap <C-w> <esc><C-w>w
@@ -51,8 +50,8 @@ nnoremap <S-T>T :Telescope find_files<CR>
 nnoremap <C-w> <C-w>w
 tnoremap <esc> <c-\><c-n>
 
-au VimEnter * :Vexplore
+au VimEnter * :NERDTree
 au VimEnter * :vertical resize 15
 au VimEnter * :set winfixwidth
 au VimEnter * :tabnew +term
-au VimEnter * :tabn
+au VimEnter * :tabn | wincmd p
