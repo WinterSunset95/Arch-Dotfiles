@@ -1,11 +1,10 @@
 -- Aliases
 local g = vim.g
-local o = vim.o
+local o = vim.opt
 
 -- Basics
 o.number = true
 o.relativenumber = true
-g.nowrap = true
 o.cursorline = true
 o.mouse = a
 o.smartindent = true
@@ -18,7 +17,6 @@ g.tabwidth = 4
 o.softtabstop = 4
 o.wildmenu = true
 o.wildmode = longest
-o.cc = 80
 o.ttyfast = true
 o.clipboard = "unnamedplus"
 o.splitbelow = true
@@ -46,6 +44,7 @@ g.user_emmet_leader_key = ","
 
 -- Stuff I couldn't quite figure out how to do with lua
 vim.cmd [[
+	set nowrap
 	colorscheme dracula
 	au VimEnter * :NERDTree
 	au VimEnter * :vertical resize 15

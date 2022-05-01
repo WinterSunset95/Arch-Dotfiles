@@ -11,12 +11,12 @@ end
 
 -- Short navigations
 k('i', 'ii', '<esc>')
-k('i', 'aa', '<esc>ha')
-k('i', 'ss', '<esc>ja')
-k('i', 'dd', '<esc>la')
-k('i', 'ww', '<esc>ka')
-k('i', 'jj', '<Down>') -- I know these keymappings are kinda wierd, but they work well for me
-k('i', 'oo', '<esc>o')
+k('i', 'AA', '<esc>ha')
+k('i', 'SS', '<esc>ja')
+k('i', 'DD', '<esc>la')
+k('i', 'WW', '<esc>ka')
+k('i', 'JJ', '<Down>') -- I know these keymappings are kinda wierd, but they work well for me
+k('i', 'OO', '<esc>o')
 -- Windows
 k("n", "J", "<C-w><C-j>")
 k("n", "K", "<C-w><C-k>")
