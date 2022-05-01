@@ -17,6 +17,7 @@
         <value type="int" value="6"/>
         <value type="int" value="3"/>
         <value type="int" value="7"/>
+        <value type="int" value="2"/>
         <value type="int" value="5"/>
         <value type="int" value="4"/>
         <value type="int" value="8"/>
@@ -40,6 +41,7 @@
         <value type="int" value="18"/>
         <value type="int" value="19"/>
         <value type="int" value="20"/>
+        <value type="int" value="9"/>
         <value type="int" value="21"/>
         <value type="int" value="22"/>
       </property>
@@ -70,9 +72,8 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1118;chromium.instance1136;chromium.instance2228;chromium.instance2279;chromium.instance552;chromium.instance570;chromium.instance574;chromium.instance579;chromium.instance583;chromium.instance614;chromium.instance756;chromium.instance925;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance1118;chromium.instance1136;chromium.instance2228;chromium.instance2279;chromium.instance552;chromium.instance570;chromium.instance574;chromium.instance579;chromium.instance583;chromium.instance614;chromium.instance626;chromium.instance756;chromium.instance925;vlc"/>
     </property>
-    <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -95,14 +96,17 @@
     </property>
     <property name="plugin-18" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="16513280391.desktop"/>
       </property>
     </property>
     <property name="plugin-19" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="16513280592.desktop"/>
       </property>
     </property>
     <property name="plugin-20" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="16513281023.desktop"/>
       </property>
     </property>
     <property name="plugin-21" type="string" value="separator"/>
@@ -125,5 +129,7 @@
       <property name="switch-workspace-on-unminimize" type="bool" value="false"/>
       <property name="show-wireframes" type="bool" value="true"/>
     </property>
+    <property name="plugin-2" type="string" value="netload"/>
+    <property name="plugin-9" type="string" value="launcher"/>
   </property>
 </channel>

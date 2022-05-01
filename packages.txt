@@ -12,7 +12,6 @@ feh
 dmenu
 xfce4-panel
 qutebrowser
-iwd
 xcompmgr
 mtpfs
 gvfs-mtp
@@ -20,10 +19,11 @@ p7zip
 grub-customizer
 xfce4-pulseaudio-plugin
 xfce4-clipman-plugin
-xfce4-notes-plugin
 php
 openbox
 menumaker
 wget
 github-cli
 neovim
+flameshot
+xfce4-netload-plugin
