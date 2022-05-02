@@ -72,7 +72,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1118;chromium.instance1136;chromium.instance2228;chromium.instance2279;chromium.instance552;chromium.instance570;chromium.instance574;chromium.instance579;chromium.instance583;chromium.instance614;chromium.instance626;chromium.instance675;chromium.instance756;chromium.instance925;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance1118;chromium.instance1136;chromium.instance2228;chromium.instance2279;chromium.instance552;chromium.instance570;chromium.instance574;chromium.instance579;chromium.instance583;chromium.instance614;chromium.instance626;chromium.instance661;chromium.instance673;chromium.instance675;chromium.instance756;chromium.instance925;vlc"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
