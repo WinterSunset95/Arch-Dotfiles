@@ -13,11 +13,13 @@
 <img src="./screenshots/s2.png" />
 <hr>
 <h5>Panel - xfce4</h5>
+<hr>
 <h5>Editor - neovim</h5>
 <hr>
 <img src="./screenshots/s3.png" />
 <hr>
 <h5>Sound - pulseaudio</h5>
+<hr>
 <h5>Minimum ram usage - About 250mb</h5>
 <hr>
 <img src="./screenshots/s4.png" />
