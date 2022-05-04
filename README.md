@@ -24,3 +24,11 @@
 <hr>
 <img src="./screenshots/s4.png" />
 <hr>
+
+<script src="https://utteranc.es/client.js"
+        repo="WinterSunset95/Arch-Dotfiles"
+        issue-term="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
