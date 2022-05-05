@@ -14,4 +14,4 @@ boldcyan="\e[3;${cyan}m"
 
 alias ls='ls --color=auto'
 alias la='ls -a'
-PS1="${boldred}\n [\u@\h ${end}${boldcyan}\w${end}${boldred}]\n \$ ${end}"
+PS1="${boldred}\n [\u@\h ${end}${boldcyan}\w${end}${boldred}] \$ ${end}"
