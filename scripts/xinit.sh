@@ -5,7 +5,7 @@ boldred="\e[1;${red}m"
 boldcyan="\e[1;${cyan}m"
 end="\e[0m"
 
-dir=$(pwd)
+xinit_dir=$(pwd)
 uid=$(id -u)
 user=$(whoami)
 
@@ -22,9 +22,9 @@ fi
 printf "${boldred}\n\nSetting up xinit for $user ${end}"
 {
 	rm -rf .xinitrc
-	ln -s $dir/xinitrc $fname
+	ln -s $xinit_dir/xinitrc $fname
 } || {
-	ln -s $dir/xinitrc $fname
+	ln -s $xinit_dir/xinitrc $fname
 }
 printf "${boldcyan}\nDone!${end}"
 

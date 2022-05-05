@@ -5,7 +5,7 @@ boldred="\e[1;${red}m"
 boldcyan="\e[1;${cyan}m"
 end="\e[0m"
 
-dir=$(pwd)
+openbox_di=$(pwd)
 uid=$(id -u)
 user=$(whoami)
 
@@ -20,9 +20,9 @@ fi
 
 {
 	rm -rf autostart
-	ln -s $dir/autostart
+	ln -s $openbox_di/autostart
 } || {
-	ln -s $dir/autostart
+	ln -s $openbox_di/autostart
 }
 printf "${boldcyan}Done!${end}"
 
