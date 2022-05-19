@@ -35,13 +35,13 @@ call () {
 call "xinit"
 
 # OpenBox
-call "openbox"
+#call "openbox"
 
 # Setting up neovim
 call "nvim"
 
 # Setting up xfce4
-call "xfce"
+#call "xfce"
 
 # Setting up pulseaudio 
 call "pulse"
