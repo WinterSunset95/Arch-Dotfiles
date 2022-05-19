@@ -24,4 +24,4 @@ wget
 github-cli
 neovim
 flameshot
-xfce4-terminal
+alacritty
