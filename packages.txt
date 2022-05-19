@@ -20,10 +20,8 @@ grub-customizer
 xfce4-pulseaudio-plugin
 xfce4-clipman-plugin
 php
-openbox
-menumaker
 wget
 github-cli
 neovim
 flameshot
-xfce4-netload-plugin
+xfce4-terminal
