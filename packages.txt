@@ -25,3 +25,4 @@ github-cli
 neovim
 flameshot
 alacritty
+gtop

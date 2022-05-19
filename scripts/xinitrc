@@ -1,5 +1,4 @@
 twm &
 
-feh --bg-fill /home/winter/Downloads/wallpaper.png
 xcompmgr -c &
 exec i3
