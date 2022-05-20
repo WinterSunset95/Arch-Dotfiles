@@ -6,23 +6,23 @@
 
 <h5>Window manager - Openbox</h5>
 <hr>
-<img src="./screenshots/s1.png" />
+<img src="https://wintersunset95.github.io/Arch-Dotfiles/screenshots/s1.png" />
 <hr>
 <h5>File manager - thunar</h5>
 <hr>
-<img src="./screenshots/s2.png" />
+<img src="https://wintersunset95.github.io/Arch-Dotfiles/screenshots/s2.png" />
 <hr>
 <h5>Panel - xfce4</h5>
 <hr>
 <h5>Editor - neovim</h5>
 <hr>
-<img src="./screenshots/s3.png" />
+<img src="https://wintersunset95.github.io/Arch-Dotfiles/screenshots/s3.png" />
 <hr>
 <h5>Sound - pulseaudio</h5>
 <hr>
 <h5>Minimum ram usage - About 250mb</h5>
 <hr>
-<img src="./screenshots/s4.png" />
+<img src="https://wintersunset95.github.io/Arch-Dotfiles/screenshots/s4.png" />
 <hr>
 
 <script src="https://utteranc.es/client.js"
