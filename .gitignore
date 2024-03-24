@@ -1,0 +1,16 @@
+*.tar
+*.tar.*
+*.jar
+*.exe
+*.msi
+*.zip
+*.tgz
+*.log
+*.log.*
+*.sig
+
+pkg/
+src/
+guake/session.json
+coc/suggest.txt
+guake/session.json

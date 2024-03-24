@@ -1,0 +1,4 @@
+twm &
+
+xcompmgr -c &
+exec i3
