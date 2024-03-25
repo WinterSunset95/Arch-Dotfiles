@@ -30,7 +30,7 @@ echo -e "${boldcyan}Do you want to install the dependencies? [y/n]${end}"
 read -r answer
 if [ "$answer" != "${answer#[Yy]}" ]
 then
-	sudo pacman -S --noconfirm alacritty conky i3-gaps neovim polybar picom tmux
+	sudo pacman -S --noconfirm alacritty conky i3-gaps neovim polybar picom tmux feh
 fi
 
 echo -e "${boldcyan}Do you want to install the fonts? [y/n]${end}"
