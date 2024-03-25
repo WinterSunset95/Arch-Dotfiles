@@ -1,0 +1,21 @@
+[submodule "conky"]
+	path = conky
+	url = https://github.com/WinterSunset95/conky
+[submodule "alacritty"]
+	path = alacritty
+	url = https://github.com/WinterSunset95/alacritty
+[submodule "i3"]
+	path = i3
+	url = https://github.com/WinterSunset95/i3
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/WinterSunset95/neovim-mini
+[submodule "picom"]
+	path = picom
+	url = https://github.com/WinterSunset95/picom
+[submodule "polybar"]
+	path = polybar
+	url = https://github.com/WinterSunset95/polybar
+[submodule "tmux"]
+	path = tmux
+	url = https://github.com/WinterSunset95/tmux-config

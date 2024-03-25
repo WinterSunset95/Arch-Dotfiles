@@ -10,45 +10,62 @@ end="\e[0m"
 dir=$(pwd)
 uid=$(id -u)
 
-# Installing the required packages
-
-printf "${boldred}\n\nUpdating package list first${end}"
-#sudo pacman -Sy
-printf "${boldcyan}\nDone!${end}"
-printf "${boldred}\n\nInstalling packages from package.txt${end}"
-#sudo pacman -S - < packages.txt
-printf "${boldcyan}\nDone!${end}"
-
-# Init function
-call () {
-	cd $dir/scripts
-	if [ uid == 0 ]
+# Function to create a symbolic link for the config folders
+link () {
+	if [ -e ./$1 ]
 	then
-		sudo bash $1.sh
-	else
-		bash $1.sh
+		rm -rf ./$1
 	fi
+	ln -sf $dir/$1 ./$1
 }
 
-# Setting up the config
-# Startx
-call "xinit"
+# Installing a nerdfont
+installNerdFont () {
 
-# OpenBox
-#call "openbox"
+}
 
-# Setting up neovim
-call "nvim"
 
-# Setting up xfce4
-#call "xfce"
+# Ask user if they want to install the dependencies
+echo -e "${boldcyan}Do you want to install the dependencies? [y/n]${end}"
+read -r answer
+if [ "$answer" != "${answer#[Yy]}" ]
+then
+	sudo pacman -S --noconfirm alacritty conky i3-gaps neovim polybar picom tmux
+fi
 
-# Setting up pulseaudio 
-call "pulse"
+echo -e "${boldcyan}Do you want to install the fonts? [y/n]${end}"
+read -r answer
+if [ "$answer" != "${answer#[Yy]}" ]
+then
+	sudo pacman -S --noconfirm ttf-font-awesome noto-fonts-emoji
+	if [ ! -d $HOME/.local/share/fonts/nerd-fonts ]
+	then
+		mkdir -p $HOME/.local/share/fonts/nerd-fonts
+	fi
+	curl -L -o $HOME/.local/share/fonts/nerd-fonts/DaddyTimeMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DaddyTimeMono.zip
+	unzip $HOME/.local/share/fonts/nerd-fonts/DaddyTimeMono.zip -d $HOME/.local/share/fonts/nerd-fonts
+	rm $HOME/.local/share/fonts/nerd-fonts/DaddyTimeMono.zip
 
-# Setting up yay
-	#cd
-	#git clone https://aur.archlinux.org/yay.git
-	#cd yay
-	#makepkg -si
+	curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/ComicShannsMono.zip -o $HOME/.local/share/fonts/nerd-fonts/ComicShannsMono.zip
+	unzip $HOME/.local/share/fonts/nerd-fonts/ComicShannsMono.zip -d $HOME/.local/share/fonts/nerd-fonts
+	rm $HOME/.local/share/fonts/nerd-fonts/ComicShannsMono.zip
 
+	curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip -o $HOME/.local/share/fonts/nerd-fonts/NerdFontsSymbolsOnly.zip
+	unzip $HOME/.local/share/fonts/nerd-fonts/NerdFontsSymbolsOnly.zip -d $HOME/.local/share/fonts/nerd-fonts
+	rm $HOME/.local/share/fonts/nerd-fonts/NerdFontsSymbolsOnly.zip
+fi
+
+if test -t $HOME/.config
+then
+	mkdir $HOME/.config
+fi
+
+cd $HOME/.config
+link alacritty
+link conky
+link i3
+link nvim
+link polybar
+link picom
+link tmux
+cd $dir
