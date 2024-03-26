@@ -68,4 +68,5 @@ link nvim
 link polybar
 link picom
 link tmux
+link sway
 cd $dir
