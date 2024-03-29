@@ -1,0 +1,92 @@
+(defwidget bar []
+	(box
+		:orientation "v"
+		(container)
+	)
+)
+
+(defwidget container []
+	(box
+		:class "container"
+		:orientation "v"
+		(workspaces)
+		(helpers)
+	)
+)
+
+(defpoll date :interval "60s"
+	"date '+{\"hour\": \"%I\", \"min\": \"%M\", \"locale\": \"%p\"}'"
+)
+
+(deflisten workspacesList :initial ""
+	"/home/autumn/.config/eww/scripts/workspaces.py"
+)
+
+(defwidget workspaces []
+	(box
+		:class "workspaces"
+		:orientation "v"
+		:valign "start"
+		:spacing 10
+		(literal :content "${workspacesList}")
+	)
+)
+
+(defwidget time []
+	(box :class "time"
+		:orientation "v"
+		:valign "center"
+		:spacing 3
+		(label :text {date.hour})
+		(label :text {date.min})
+		(label :text {date.locale})
+	)
+)
+
+(defwidget battery [status battery one two three four five six full charging]
+	(box :class "battery"
+		:orientation "v"
+		:spacing 2
+		:valign "end"
+		(label :text {battery})
+		(button :onclick "echo hello" {status == "Charging" ? "" :
+			battery <= 20 ? one :
+				battery <= 40 ? two :
+					battery <= 50 ? three :
+						battery <= 70 ? four :
+							battery <= 80 ? five : 
+								battery <= 90 ? six : full
+			})
+	)
+)
+
+(defwidget helpers []
+	(box :class "helpers"
+		:orientation "v"
+		:valign "end"
+		(battery 
+			:status {EWW_BATTERY.BAT1.status}
+			:battery {EWW_BATTERY.BAT1.capacity}
+			:one "󰂃 "
+			:two " "
+			:three " "
+			:four " "
+			:five " "
+			:six " "
+			:full "󱈏 "
+			:charging " "
+		)
+		(time)
+	)
+)
+
+(defwindow bar
+  :monitor 0
+  :stacking "fg"
+  :exclusive "true"
+  :geometry (geometry
+				:width "30px"
+				:height "100%"
+				:anchor "left center"
+  )
+  (bar))
