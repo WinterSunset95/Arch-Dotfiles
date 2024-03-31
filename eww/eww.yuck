@@ -1,21 +1,21 @@
-(defwidget bar []
-	(box
-		:orientation "v"
-		(container)
-	)
+(defvar show_vol false)
+(defpoll currvol
+	:interval "3s"
+	"./scripts/getvol"
 )
 
-(defwidget container []
-	(box
+(defwidget bar []
+	(centerbox
 		:class "container"
-		:orientation "v"
+		:orientation "h"
 		(workspaces)
+		(time)
 		(helpers)
 	)
 )
 
 (defpoll date :interval "60s"
-	"date '+{\"hour\": \"%I\", \"min\": \"%M\", \"locale\": \"%p\"}'"
+	"date '+%I:%M'"
 )
 
 (deflisten workspacesList :initial ""
@@ -25,58 +25,107 @@
 (defwidget workspaces []
 	(box
 		:class "workspaces"
-		:orientation "v"
-		:valign "start"
+		:orientation "h"
+		:halign "start"
 		:spacing 10
 		(literal :content "${workspacesList}")
 	)
 )
 
+(defwidget volume []
+	(eventbox
+		:onhover "${EWW_CMD} update show_vol=true"
+		:onhoverlost "${EWW_CMD} update show_vol=false"
+		(box
+			:class "volume button"
+			:orientation "h"
+			:spacing 10
+			:space-evenly false
+			:vexpand false
+			:hexpand false
+			(button :onclick "" "󰕾")
+			(revealer
+				:transition "slideright"
+				:duration "350ms"
+				:reveal show_vol
+				(scale
+					:class "volume_scale"
+					:orientation "h"
+					:width 100
+					:value currvol
+					:max 100
+					:min 0
+					:onchange "amixer -D pulse sset Master {}%"
+				)
+			)
+		)
+	)
+)
+
+(defwidget inet []
+	(eventbox :onhover "" :class "inet button"
+		:halign "center"
+		(label :text "󰤨 ")
+	)
+)
+
+(defwidget ram []
+	(box :class "ram"
+		:orientation "h"
+		:halign "center"
+		:spacing 10
+		:tooltip "RAM: ${round(EWW_RAM.used_mem_perc, 0)}%"
+		(circular-progress
+			:class "ram_progress"
+			:width 20
+			:value {EWW_RAM.used_mem_perc}
+			:thickness 3
+		)
+	)
+)
+
 (defwidget time []
 	(box :class "time"
-		:orientation "v"
-		:valign "center"
-		:spacing 3
-		(label :text {date.hour})
-		(label :text {date.min})
-		(label :text {date.locale})
+		(label :text {date})
 	)
 )
 
 (defwidget battery [status battery one two three four five six full charging]
 	(box :class "battery"
-		:orientation "v"
-		:spacing 2
-		:valign "end"
-		(label :text {battery})
-		(button :onclick "echo hello" {status == "Charging" ? "" :
-			battery <= 20 ? one :
-				battery <= 40 ? two :
-					battery <= 50 ? three :
-						battery <= 70 ? four :
-							battery <= 80 ? five : 
-								battery <= 90 ? six : full
-			})
+		:orientation "h"
+		:spacing 10
+		:halign "center"
+		:tooltip "Battery: ${battery}%"
+		(circular-progress
+			:class "battery_progress"
+			:width 20
+			:value battery
+			:thickness 3
+		)
 	)
 )
 
 (defwidget helpers []
 	(box :class "helpers"
-		:orientation "v"
-		:valign "end"
+		:orientation "h"
+		:halign "end"
+		:spacing 10
+		:space-evenly false
+		(volume)
+		(inet)
+		(ram)
 		(battery 
 			:status {EWW_BATTERY.BAT1.status}
 			:battery {EWW_BATTERY.BAT1.capacity}
-			:one "󰂃 "
+			:one "󰂃"
 			:two " "
 			:three " "
 			:four " "
 			:five " "
 			:six " "
-			:full "󱈏 "
-			:charging " "
+			:full "󱈏"
+			:charging "󰂄"
 		)
-		(time)
 	)
 )
 
@@ -85,8 +134,8 @@
   :stacking "fg"
   :exclusive "true"
   :geometry (geometry
-				:width "30px"
-				:height "100%"
-				:anchor "left center"
+				:height "30px"
+				:width "100%"
+				:anchor "top center"
   )
   (bar))

@@ -1,45 +1,37 @@
 * {
   all: unset; //Unsets everything so you can style everything from scratch
-  font-size: 1rem;
 }
 
 //Global Styles
 .bar {
   color: #b0b4bc;
-  padding: 10px 0 10px 10px;
+  padding: 10px 10px 0 10px;
 }
 
-// The main container
-.container {
-	background-color: #4e4e4e;
-	border-radius: 10px;
-}
-
-// At the bottom of the bar
-// The time, battery status, volume status, memory usage etc.
-
-// The time module
-.time {
-	border-top: 1px solid black;
-	padding: 0.50rem 0;
-}
-
-// The battery module
-.battery {
-	padding: 0.50rem 0;
-	border-top: 1px solid black;
-}
-
-.battery button:active {
-	background-color: #1e1e1e;
-}
-
-// The workspaces module
-.workspaces {
+.workspaces, .time, .helpers {
+	background-color: #4A4A4A;
 	padding: 0.50rem;
 	border-radius: 10px;
 }
 
+.helpers {
+	padding: 0.50rem 1rem;
+}
+
+.button {
+	font-size: 1.5rem;
+}
+
+scale trough {
+  all: unset;
+  background-color: #0f0f0f;
+  border-radius: 10px;
+  min-height: 10px;
+  min-width: 100px;
+  margin: 0px 10px 0px 0px;
+}
+
+// The workspaces module
 .active_workspace {
 	border-radius: 1rem;
 	background-color: #D35D6E;
@@ -54,3 +46,12 @@
   color: #D35D6E;
 }
 
+.volume_scale trough highlight {
+	background-color: #D35D6E;
+	border-radius: 10px;
+}
+
+// battery
+.battery_progress, .ram_progress {
+	color: #D35D6E;
+}

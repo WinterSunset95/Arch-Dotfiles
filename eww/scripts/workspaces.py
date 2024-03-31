@@ -14,7 +14,7 @@ def update_workspace(active_workspace):
         openWorkspaces.append(workspace['id'])
     openWorkspaces.sort()
 
-    startStr = f"(box :class \"workspaces\" :orientation \"v\" :valign \"start\" :spacing 10 "
+    startStr = f"(box :class \"workspaces\" :orientation \"h\" :halign \"start\" :spacing 10 "
     middleStr = f""
     endStr = f")"
 
