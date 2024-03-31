@@ -1,7 +1,12 @@
 (defvar show_vol false)
+(defvar show_brightness false)
 (defpoll currvol
 	:interval "3s"
 	"./scripts/getvol"
+)
+(defpoll currbrightness
+	:interval "3s"
+	"./scripts/brightness.sh get"
 )
 
 (defwidget bar []
@@ -69,6 +74,36 @@
 	)
 )
 
+(defwidget brightness []
+	(eventbox
+		:onhover "${EWW_CMD} update show_brightness=true"
+		:onhoverlost "${EWW_CMD} update show_brightness=false"
+		(box
+			:class "brightness button"
+			:orientation "h"
+			:spacing 10
+			:space-evenly false
+			:vexpand false
+			:hexpand false
+			(button :onclick "" "󰃞")
+			(revealer
+				:transition "slideright"
+				:duration "350ms"
+				:reveal show_brightness
+				(scale
+					:class "brightness_scale"
+					:orientation "h"
+					:width 100
+					:value currbrightness
+					:max 100
+					:min 0
+					:onchange "./scripts/brightness.sh set {}"
+				)
+			)
+		)
+	)
+)
+
 (defwidget ram []
 	(box :class "ram"
 		:orientation "h"
@@ -91,13 +126,14 @@
 )
 
 (defwidget battery [status battery one two three four five six full charging]
-	(box :class "battery"
+	(box :class "battery "
+
 		:orientation "h"
 		:spacing 10
 		:halign "center"
 		:tooltip "Battery: ${battery}%"
 		(circular-progress
-			:class "battery_progress"
+			:class "${status == "Charging" ? "charging" : status == "Full" ? "full" : "" } ${battery > 95 ? "six" : battery > 85 ? "five" : battery > 75 ? "four" : battery > 65 ? "three" : battery > 55 ? "two" : "one"}"
 			:width 20
 			:value battery
 			:thickness 3
@@ -112,6 +148,7 @@
 		:spacing 10
 		:space-evenly false
 		(volume)
+		(brightness)
 		(inet)
 		(ram)
 		(battery 

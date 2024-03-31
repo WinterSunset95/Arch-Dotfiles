@@ -46,12 +46,46 @@ scale trough {
   color: #D35D6E;
 }
 
-.volume_scale trough highlight {
+.volume_scale trough highlight, .brightness_scale trough highlight {
 	background-color: #D35D6E;
 	border-radius: 10px;
 }
 
 // battery
-.battery_progress, .ram_progress {
+.charging {
+	color: blue;
+}
+
+.full {
+	color: green;
+}
+
+.one {
+	color: #eb4034;
+}
+
+.two {
+	color: #eb8c34;
+}
+
+.three {
+	color: #ebd234;
+}
+
+.four {
+	color: #b0eb34;
+}
+
+.five {
+	color: #34eb3d;
+}
+
+.six {
+	color: #34eb9e;
+}
+
+// Ram
+.ram_progress {
 	color: #D35D6E;
 }
+
