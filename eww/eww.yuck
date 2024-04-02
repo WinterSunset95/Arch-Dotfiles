@@ -1,5 +1,6 @@
 (defvar show_vol false)
 (defvar show_brightness false)
+(defvar show_ip false)
 (defpoll currvol
 	:interval "3s"
 	"./scripts/getvol"
@@ -8,6 +9,16 @@
 	:interval "3s"
 	"./scripts/brightness.sh get"
 )
+(defpoll inet_type
+	:interval "60s"
+	"./scripts/getip.sh type"
+)
+(defpoll ip_addr
+	:interval "60s"
+	"./scripts/getip.sh ip"
+)
+
+
 
 (defwidget bar []
 	(centerbox
@@ -68,9 +79,27 @@
 )
 
 (defwidget inet []
-	(eventbox :onhover "" :class "inet button"
-		:halign "center"
-		(label :text "󰤨 ")
+	(eventbox
+		:onhover "${EWW_CMD} update show_ip=true"
+		:onhoverlost "${EWW_CMD} update show_ip=false"
+		(box
+			:class "inet button"
+			:halign "center"
+			:space-evenly false
+			:width 25
+			(label :text {inet_type})
+			(revealer
+				:transition "slideleft"
+				:duration "350ms"
+				:reveal show_ip
+				(box
+					:class "inet_box"
+					:orientation "h"
+					:width 130
+					(label :text {ip_addr})
+				)
+			)
+		)
 	)
 )
 
@@ -94,9 +123,9 @@
 					:class "brightness_scale"
 					:orientation "h"
 					:width 100
-					:value currbrightness
+					:value {currbrightness}
 					:max 100
-					:min 0
+					:min 10
 					:onchange "./scripts/brightness.sh set {}"
 				)
 			)
@@ -127,7 +156,6 @@
 
 (defwidget battery [status battery one two three four five six full charging]
 	(box :class "battery "
-
 		:orientation "h"
 		:spacing 10
 		:halign "center"
