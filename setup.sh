@@ -69,4 +69,8 @@ link polybar
 link picom
 link tmux
 link sway
+link waybar
+link hypr
+link eww
+link dunst
 cd $dir

@@ -17,34 +17,42 @@
 	:interval "60s"
 	"./scripts/getip.sh ip"
 )
-
-
+(deflisten activeWindow :initial "hello"
+	"./scripts/window.py"
+)
+(defpoll date :interval "60s"
+	"date '+%I:%M'"
+)
+(deflisten workspacesList :initial ""
+	"/home/autumn/.config/eww/scripts/workspaces.py"
+)
 
 (defwidget bar []
 	(centerbox
 		:class "container"
 		:orientation "h"
-		(workspaces)
+		(leftbar)
 		(time)
 		(helpers)
 	)
 )
 
-(defpoll date :interval "60s"
-	"date '+%I:%M'"
-)
-
-(deflisten workspacesList :initial ""
-	"/home/autumn/.config/eww/scripts/workspaces.py"
-)
 
 (defwidget workspaces []
 	(box
-		:class "workspaces"
-		:orientation "h"
-		:halign "start"
+		:orientation "v"
+		:valign "center"
 		:spacing 10
 		(literal :content "${workspacesList}")
+	)
+)
+
+(defwidget active_window []
+	(box
+		:class "activeWindow"
+		:orientation "h"
+		:halign "center"
+		(label :text {activeWindow})
 	)
 )
 
@@ -150,6 +158,8 @@
 
 (defwidget time []
 	(box :class "time"
+		:orientation "h"
+		:halign "center"
 		(label :text {date})
 	)
 )
@@ -161,11 +171,30 @@
 		:halign "center"
 		:tooltip "Battery: ${battery}%"
 		(circular-progress
-			:class "${status == "Charging" ? "charging" : status == "Full" ? "full" : "" } ${battery > 95 ? "six" : battery > 85 ? "five" : battery > 75 ? "four" : battery > 65 ? "three" : battery > 55 ? "two" : "one"}"
+			:class "${status == "Charging" ? "charging"
+				: status == "Full" ? "full"
+					: battery > 95 ? "six"
+					: battery > 85 ? "five"
+					: battery > 75 ? "four"
+					: battery > 65 ? "three"
+					: battery > 55 ? "two"
+					: "one"}"
 			:width 20
 			:value battery
 			:thickness 3
 		)
+	)
+)
+
+(defwidget leftbar []
+	(box
+		:class "leftbar"
+		:orientation "h"
+		:halign "start"
+		:space-evenly false
+		:spacing 50
+		(workspaces)
+		(active_window)
 	)
 )
 

@@ -6,7 +6,6 @@ import socket
 import json
 
 def update_workspace(active_workspace):
-
     openWorkspaces = os.popen("hyprctl workspaces -j").read()
     workspaces = json.loads(openWorkspaces)
     openWorkspaces = [];

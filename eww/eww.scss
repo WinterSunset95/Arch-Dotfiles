@@ -8,10 +8,18 @@
   padding: 10px 10px 0 10px;
 }
 
-.workspaces, .time, .helpers {
+.leftbar, .time, .helpers {
 	background-color: #4A4A4A;
 	padding: 0.50rem;
 	border-radius: 10px;
+}
+
+.workspaces {
+	padding-left: 0.5rem;
+}
+
+.activeWindow {
+	padding-right: 1rem;
 }
 
 .helpers {
@@ -53,7 +61,7 @@ scale trough {
 
 // battery
 .charging {
-	color: blue;
+	color: aqua;
 }
 
 .full {
