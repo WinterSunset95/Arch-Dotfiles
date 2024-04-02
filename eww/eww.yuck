@@ -2,6 +2,7 @@
 (defvar show_brightness false)
 (defvar show_ip false)
 (defvar show_controls false)
+(defvar screen_recording false)
 (defpoll currvol
 	:interval "3s"
 	"./scripts/getvol"
@@ -59,6 +60,35 @@
 	)
 )
 
+(defwidget screenRecording []
+	(box
+		:class "screenRecording"
+		:orientation "h"
+		:halign "center"
+		:width 20
+		:space-evenly false
+		(button :class "button recorder" :onclick "${EWW_CMD} update screen_recording=false && killall -r wf-recorder" "󰻃")
+	)
+)
+
+(defwidget tray []
+	(box
+		:class "tray"
+		:orientation "h"
+		:spacing 10
+		:space-evenly false
+		:vexpand false
+		:hexpand false
+		(label :text "|")
+		(revealer
+			:transition "slideleft"
+			:duration "350ms"
+			:reveal screen_recording
+			(screenRecording)
+		)
+	)
+)
+
 (defwidget audio_controls []
 	(box
 		:class "audio_controls"
@@ -69,7 +99,7 @@
 			:onclick "playerctl previous" "󰒮")
 		(button 
 			:class "audio_button"
-			:onclick "playerctl play-pause" "󰐎")
+			:onclick "" "󰐎")
 		(button 
 			:class "audio_button"
 			:onclick "playerctl next" "󰒭")
@@ -275,6 +305,12 @@
 			:six " "
 			:full "󱈏"
 			:charging "󰂄"
+		)
+		(revealer
+			:transition "slideleft"
+			:duration "350ms"
+			:reveal screen_recording
+			(tray)
 		)
 	)
 )

@@ -33,7 +33,7 @@
 
 scale trough {
   all: unset;
-  background-color: #0f0f0f;
+  background-color: #4f4f4f;
   border-radius: 10px;
   min-height: 10px;
   min-width: 100px;
@@ -113,4 +113,13 @@ scale trough {
 
 .audio_button:hover {
 	color: #D35D6E;
+}
+
+// Recorder
+.recorder {
+	color: #D35D6E;
+}
+
+.recorder:hover {
+	color: green;
 }
