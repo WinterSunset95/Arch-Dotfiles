@@ -15,7 +15,7 @@ def getCurrentSong():
             artist = "Unknown"
         return f"{song} ({artist})"
     except:
-        return ""
+        return "No audio"
 
 while True:
     getSong = getCurrentSong()
