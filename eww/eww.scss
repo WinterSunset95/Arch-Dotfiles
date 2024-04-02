@@ -8,10 +8,10 @@
   padding: 10px 10px 0 10px;
 }
 
-.leftbar, .time, .helpers {
+.leftbar, .centerbar, .helpers {
 	background-color: #4A4A4A;
-	padding: 0.50rem;
-	border-radius: 10px;
+	padding: 0.25rem;
+	border-radius: 5px;
 }
 
 .workspaces {
@@ -23,7 +23,7 @@
 }
 
 .helpers {
-	padding: 0.50rem 1rem;
+	padding: 0.25rem 1rem;
 }
 
 .button {
@@ -48,7 +48,6 @@ scale trough {
 .workspaces button:active {
   color: #D35D6E;
 }
-
 
 .workspaces button:hover {
   color: #D35D6E;
@@ -100,4 +99,17 @@ scale trough {
 // Network
 .inet_box {
 	font-size: 1rem;
+}
+
+// audio
+.audio {
+	padding: 0.25rem 1rem;
+}
+
+.audio_button {
+	font-size: 1.5rem;
+}
+
+.audio_button:hover {
+	color: #D35D6E;
 }

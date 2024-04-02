@@ -1,6 +1,7 @@
 (defvar show_vol false)
 (defvar show_brightness false)
 (defvar show_ip false)
+(defvar show_controls false)
 (defpoll currvol
 	:interval "3s"
 	"./scripts/getvol"
@@ -24,7 +25,10 @@
 	"date '+%I:%M'"
 )
 (deflisten workspacesList :initial ""
-	"/home/autumn/.config/eww/scripts/workspaces.py"
+	"./scripts/workspaces.py"
+)
+(deflisten currSong :initial "No music playing"
+	"./scripts/audio.py"
 )
 
 (defwidget bar []
@@ -32,11 +36,10 @@
 		:class "container"
 		:orientation "h"
 		(leftbar)
-		(time)
+		(centerbar)
 		(helpers)
 	)
 )
-
 
 (defwidget workspaces []
 	(box
@@ -53,6 +56,55 @@
 		:orientation "h"
 		:halign "center"
 		(label :text {activeWindow})
+	)
+)
+
+(defwidget audio_controls []
+	(box
+		:class "audio_controls"
+		:orientation "h"
+		:spacing 10
+		(button 
+			:class "audio_button"
+			:onclick "playerctl previous" "󰒮")
+		(button 
+			:class "audio_button"
+			:onclick "playerctl play-pause" "󰐎")
+		(button 
+			:class "audio_button"
+			:onclick "playerctl next" "󰒭")
+	)
+)
+
+(defwidget audio []
+	(eventbox
+		:onhover "${EWW_CMD} update show_controls=true"
+		:onhoverlost "${EWW_CMD} update show_controls=false"
+		(box
+			:class "audio"
+			:orientation "v"
+			:valign "center"
+			:space-evenly false
+			:vexpand false
+			:hexpand false
+			(label :text "${currSong}")
+			(revealer
+				:transition "slideup"
+				:duration "350ms"
+				:reveal show_controls
+				(audio_controls)
+			)
+		)
+	)
+)
+
+(defwidget centerbar []
+	(box
+		:class "centerbar"
+		:orientation "h"
+		:halign "center"
+		:spacing 10
+		(audio)
 	)
 )
 
@@ -204,6 +256,10 @@
 		:halign "end"
 		:spacing 10
 		:space-evenly false
+		(time)
+		(box
+			(label :text "|")
+		)
 		(volume)
 		(brightness)
 		(inet)
