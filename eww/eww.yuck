@@ -46,7 +46,6 @@
 	(box
 		:orientation "v"
 		:valign "center"
-		:spacing 10
 		(literal :content "${workspacesList}")
 	)
 )
@@ -238,6 +237,22 @@
 	)
 )
 
+(defwidget cpu []
+	(box
+		:class "ram"
+		:orientation "h"
+		:halign "center"
+		:spacing 10
+		:tooltip "CPU: ${round(EWW_CPU.avg, 0)}%"
+		(circular-progress
+			:class "ram_progress"
+			:width 20
+			:value {EWW_CPU.avg}
+			:thickness 3
+		)
+	)
+)
+
 (defwidget time []
 	(box :class "time"
 		:orientation "h"
@@ -294,6 +309,7 @@
 		(brightness)
 		(inet)
 		(ram)
+		(cpu)
 		(battery 
 			:status {EWW_BATTERY.BAT1.status}
 			:battery {EWW_BATTERY.BAT1.capacity}
@@ -315,13 +331,25 @@
 	)
 )
 
-(defwindow bar
+(defwindow barx11
+  :monitor 0
+  :stacking "fg"
+  :windowtype "dock"
+  :geometry (geometry
+				:width "100%"
+				:anchor "top center"
+  )
+  (bar)
+)
+
+(defwindow barwayland
   :monitor 0
   :stacking "fg"
   :exclusive "true"
   :geometry (geometry
-				:height "30px"
 				:width "100%"
+				:height "20"
 				:anchor "top center"
   )
-  (bar))
+  (bar)
+)

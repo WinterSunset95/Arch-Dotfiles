@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Usage: ./start [sway|i3|qtile]
+if [ "$1" == "sway" ]; then
+	XDG_SESSION_TYPE=wayland dbus-run-session sway
+elif [ "$1" == "hypr" ]; then
+	XDG_SESSION_TYPE=wayland
+	GDK_BACKEND=wayland
+	CLUTTER_BACKEND=wayland
+	QT_QPA_PLATFORM=wayland
+	Hyprland
+elif [ "$1" == "i3" ]; then
+	startx
+elif [ "$1" == "qtile" ]; then
+	qtile
+else
+	echo "Usage: ./start [sway|i3|qtile|hypr]"
+fi
