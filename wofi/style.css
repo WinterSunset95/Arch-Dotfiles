@@ -1,0 +1,24 @@
+#window {
+	border: none;
+	background: none;
+}
+
+#input {
+	border: 2px solid white;
+	background-color: rgba(20,20,20,1);
+	color: white;
+	margin: 10px 100px;
+	padding: 10px;
+	border-radius: 0;
+}
+
+#scroll {
+	border: 2px solid aqua;
+	background-color: rgba(20,20,20,1);
+	padding: 20px;
+	margin: 5px;
+}
+
+#entry {
+	padding: 5px;
+}
