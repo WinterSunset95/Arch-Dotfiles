@@ -8,6 +8,8 @@ elif [ "$1" == "hypr" ]; then
 	GDK_BACKEND=wayland
 	CLUTTER_BACKEND=wayland
 	QT_QPA_PLATFORM=wayland
+	xrdb ~/.Xresources
+	xrdb -merge ~/.Xresources
 	Hyprland
 elif [ "$1" == "i3" ]; then
 	startx

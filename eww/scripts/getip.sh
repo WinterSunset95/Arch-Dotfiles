@@ -9,6 +9,8 @@ if [ "$1" == "type" ]; then
 		echo "󰈀"
 	elif [ -n "$(ifconfig wlo1 2>/dev/null | grep "inet ")" ]; then
 		echo "󰤨"
+	elif [ -n "$(ifconfig wlan0 2>/dev/null | grep "inet ")" ]; then
+		echo "󰤨"
 	else
 		echo "󰤭"
 	fi
