@@ -10,6 +10,11 @@ end="\e[0m"
 dir=$(pwd)
 uid=$(id -u)
 
+# List of what I need to do
+# 1. Setup Xorg
+# 2. Setup pipewire
+# 3. Setup Picom, Conky, Polybar, Neovim
+
 # Function to create a symbolic link for the config folders
 link () {
 	if [ -e ./$1 ]
@@ -21,7 +26,6 @@ link () {
 
 # Installing a nerdfont
 installNerdFont () {
-
 }
 
 
@@ -74,3 +78,24 @@ link hypr
 link eww
 link dunst
 cd $dir
+
+echo -e "${boldcyan}Links complete!${end}"
+echo -e "${boldcyan}Setup pipewire? [y/n]${end}"
+read -r answer
+if [ "$answer" != "${answer#[Yy]"]
+then
+	systemctl --user enable pipewire
+	systtmctl --user enable pipewire-pulse
+fi
+
+echo -e "${boldcyan}Setup complete!${end}"
+echo -e "${boldcyan}Setup Neovim? [y/n]${end}"
+read -r answer
+if [ "$answer" != "${answer#[Yy]" ]
+then
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+fi
+echo -e "${boldcyan}Setup complete!${end}"
+
+

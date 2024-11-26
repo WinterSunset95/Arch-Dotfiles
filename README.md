@@ -17,12 +17,6 @@ cd Arch-Dotfiles
 
 ## Features and screenshots
 - Window manager - i3
-![i3](./screenshots/desktop.png)
+![i3](./screenshots/bg1.png)
 - Terminal - alacritty
-![alacritty](./screenshots/alacritty.png)
-- File manager - thunar
-![thunar](./screenshots/thunar.png)
-- Panel - polybar
-![polybar](./screenshots/polybar.png)
-- Editor - neovim
-![neovim](./screenshots/neovim.png)
+![alacritty](./screenshots/bg2.png)
