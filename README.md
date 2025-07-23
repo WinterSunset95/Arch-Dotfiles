@@ -1,4 +1,5 @@
 # Arch-Dotfiles
+If you came from an instagram comment, yes i am wallace.thiago
 
 ## Quick overview
 This repo contains my arch linux configs along with an automation script for full installation of said configs. Note that I have tried this script only a few times and WILL be buggy. Use at your own risk.
